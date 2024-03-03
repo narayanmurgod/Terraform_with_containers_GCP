@@ -43,7 +43,7 @@ resource "google_compute_router_nat" "nat-gw" {
   name         = "nat-gw"
   router       = google_compute_network.production-vpc.self_link
   nat_ip_allocate_option = "MANUAL_ONLY" # This option only allocates IP addresses for manual NATs. Needed for using existing IP address (Elastic IP equivalent).
-  source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+  source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
 }
 
 # Internet Gateway for the public subnet
@@ -60,8 +60,10 @@ resource "google_compute_address" "elastic-ip-for-nat-gw" {
 
 # Associate static IP with Cloud NAT
 resource "google_compute_router_nat" "nat-gw-ip" {
+  name       = "my-router-nat"
+  source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   router     = google_compute_router_nat.nat-gw.name
   region     = var.region
-  nat_router = google_compute_router_nat.nat-gw.self_link
-  nat_ip     = google_compute_address.elastic-ip-for-nat-gw.address
+  //nat_router = google_compute_router_nat.nat-gw.self_link
+  //nat_ips                = google_compute_address.address.*.self_link
 }
