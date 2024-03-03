@@ -1,0 +1,15 @@
+{
+    "bindings": [
+      {
+        "role": "roles/compute.loadBalancerAdmin", 
+        "members": ["serviceAccount:331975491111@compute.iam.gserviceaccount.com"]  
+      },
+      {
+        "role": "roles/compute.instanceAdmin",  
+        "members": ["serviceAccount:331975491111@compute.iam.gserviceaccount.com"]  
+      }
+    ],
+    "etag": "0",
+    "version": 3
+  }
+  

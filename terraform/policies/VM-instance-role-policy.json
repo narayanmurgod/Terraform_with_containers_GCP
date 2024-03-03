@@ -1,0 +1,20 @@
+{
+    "bindings": [
+      {
+        "role": "roles/compute.instanceAdmin",
+        "members": ["serviceAccount:cts05-murgod@compute.gserviceaccount.com"]
+      },
+      {
+        "role": "roles/storage.admin",  
+        "members": ["serviceAccount:cts05-murgod@storage.gserviceaccount.com"]  
+      },
+      {
+        "role": "roles/monitoring.viewer",  
+        "members": ["serviceAccount:cts05-murgod@cloudservices.gserviceaccount.com"]  
+      }
+
+    ],
+    "etag": "0",
+    "version": 3
+  }
+  

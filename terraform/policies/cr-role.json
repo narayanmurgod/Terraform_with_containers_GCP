@@ -1,0 +1,14 @@
+{
+    "bindings": [
+      {
+        "role": "roles/iam.serviceAccountUser",
+        "members": [
+          "serviceAccount:container-engine@container.iam.gserviceaccount.com",
+          "serviceAccount:compute-engine@compute.iam.gserviceaccount.com"
+        ]
+      }
+    ],
+    "etag": "0",
+    "version": 3
+  }
+  
